@@ -538,6 +538,12 @@ if (TARGET ch_contrib::qpl)
 dbms_target_link_libraries(PUBLIC ch_contrib::qpl)
 endif ()
 
+set (LIBBSC_LIBRARY libbsc)
+set (LIBBSC_INCLUDE_DIR ${ClickHouse_SOURCE_DIR}/contrib/libbsc/src)
+if (LIBBSC_LIBRARY)
+dbms_target_link_libraries(PRIVATE ${LIBBSC_LIBRARY})
+endif ()
+
 dbms_target_link_libraries(PRIVATE _boost_context)
 
 if (ENABLE_NLP)

@@ -167,6 +167,7 @@ void registerCodecLZ4HC(CompressionCodecFactory & factory);
 void registerCodecZSTD(CompressionCodecFactory & factory);
 void registerCodecMultiple(CompressionCodecFactory & factory);
 void registerCodecDeflateQpl(CompressionCodecFactory & factory);
+void registerCodecBSC(CompressionCodecFactory & factory);
 
 /// Keeper use only general-purpose codecs, so we don't need these special codecs
 /// in standalone build
@@ -190,6 +191,7 @@ CompressionCodecFactory::CompressionCodecFactory()
     registerCodecZSTD(*this);
     registerCodecLZ4HC(*this);
     registerCodecMultiple(*this);
+    registerCodecBSC(*this);
 #ifndef KEEPER_STANDALONE_BUILD
     registerCodecDelta(*this);
     registerCodecT64(*this);
